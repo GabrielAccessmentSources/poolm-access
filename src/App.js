@@ -1,7 +1,11 @@
+import {Container} from "@mui/material";
+
 function App() {
   return (
     <div className="App">
-      <p>Hello World</p>
+        <Container>
+            <p>Hello world</p>
+        </Container>
     </div>
   );
 }
