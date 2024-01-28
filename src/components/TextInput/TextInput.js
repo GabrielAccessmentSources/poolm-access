@@ -26,7 +26,9 @@ export const TextInput = ({ type }) => {
             <Form className="my-form">
                 <div className="form-group">
                     <ErrorMessage name="firstName" component="div" className="error"/>
-                    <label htmlFor="firstName">{LabelHelper({ type }).label}</label>
+                    <label htmlFor="firstName" className="custom-label">
+                        {LabelHelper({ type }).label}
+                    </label>
                     <div className="input-container">
                         <Field type="text" id="firstName" name="firstName" className="input"/>
                     </div>

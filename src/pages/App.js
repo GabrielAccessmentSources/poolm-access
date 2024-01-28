@@ -28,7 +28,7 @@ const App = () => {
                 <TextInput type="name"/>
                 <TextInput type="surname"/>
             </div>
-            <Selector/>
+            <Selector label={"Favorite star wars movie"}/>
         </Card>
     </>
   );
