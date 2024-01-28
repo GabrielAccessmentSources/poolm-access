@@ -5,6 +5,7 @@ import { fetchFilms } from "../ducks/actions/fetchFilms";
 import { Card } from "../components/Card/Card";
 import { TextInput } from "../components/TextInput/TextInput";
 import "./app.css";
+import { Selector } from "../components/Selector/Selector";
 
 const App = () => {
     const dispatch=  useDispatch();
@@ -23,8 +24,11 @@ const App = () => {
     <>
         <Card>
             <h1>My form</h1>
-            <TextInput type="name"/>
-            <TextInput type="surname"/>
+            <div className="input-row">
+                <TextInput type="name"/>
+                <TextInput type="surname"/>
+            </div>
+            <Selector/>
         </Card>
     </>
   );

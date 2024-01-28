@@ -3,6 +3,7 @@
     flex-direction: column;
     max-width: 400px;
     margin: auto;
+    flex: 1;
 }
 
 .form-group {
@@ -17,14 +18,16 @@ label {
 .input-container {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .input {
+    flex: 1;
     padding: 8px;
     border: 1px solid rgba(30, 81, 103, 1);
     border-radius: 8px;
     background-color: rgba(245, 252, 255, 1);
-    margin-top: 5px; /* Add margin to separate input and error message */
+    margin-top: 5px;
 }
 
 .error {
@@ -40,5 +43,5 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 10px; /* Add margin to separate the button from the form group */
+    margin-top: 10px;
 }
