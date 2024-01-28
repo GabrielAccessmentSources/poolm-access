@@ -19,7 +19,6 @@ const App = () => {
         }
     }, [dispatch, status]);
 
-
   return (
     <>
         <Card>
@@ -28,7 +27,7 @@ const App = () => {
                 <TextInput type="name"/>
                 <TextInput type="surname"/>
             </div>
-            <Selector label={"Favorite star wars movie"}/>
+            <Selector label={"Favorite star wars movie"} data={films}/>
         </Card>
     </>
   );
