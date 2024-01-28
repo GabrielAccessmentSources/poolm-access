@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFilms } from "./ducks/actions/fetchFilms";
 
-import { Container } from "@mui/material";
+import { fetchFilms } from "../ducks/actions/fetchFilms";
+import { Card } from "../components/Card/Card";
+import { TextInput } from "../components/TextInput/TextInput";
+import "./app.css";
 
 const App = () => {
     const dispatch=  useDispatch();
     const films = useSelector((state) => state.films.films);
     const status = useSelector((state) => state.films.status);
+    console.log(films);
 
     useEffect(() => {
         if(status === "idle"){
@@ -15,14 +18,15 @@ const App = () => {
         }
     }, [dispatch, status]);
 
-    console.log(films);
 
   return (
-    <div className="App">
-        <Container>
-            <p>Hello world</p>
-        </Container>
-    </div>
+    <>
+        <Card>
+            <h1>My form</h1>
+            <TextInput type="name"/>
+            <TextInput type="surname"/>
+        </Card>
+    </>
   );
 };
 
