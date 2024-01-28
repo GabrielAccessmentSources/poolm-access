@@ -1,36 +1,26 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
+    env: {
+        browser: true,
+        es2021: true,
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "overrides": [
+    extends: ["eslint:recommended", "plugin:react/recommended"],
+    overrides: [
         {
-            "env": {
-                "node": true
+            files: ["*.js"], // Add the specific file patterns where you want to disable the rule
+            rules: {
+                "react/prop-types": "off",
             },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
+        },
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
     },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
+    plugins: ["react"],
+    rules: {
         semi: [2, "always"],
-        "quotes": [2, "double", { "avoidEscape": true }],
+        quotes: [2, "double", { avoidEscape: true }],
         "object-curly-spacing": ["error", "always"],
-        "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }]
-    }
-}
+        "no-multiple-empty-lines": ["error", { max: 2, maxEOF: 1 }],
+    },
+};

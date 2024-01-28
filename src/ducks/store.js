@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-const rootReducer = {
+import filmsSlice from "./reducers/filmsSlice";
 
+const rootReducer = {
+    films: filmsSlice
 };
 
 const store = configureStore({

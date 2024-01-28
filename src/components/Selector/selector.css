@@ -1,0 +1,9 @@
+.custom-selector {
+    border-radius: 8px;
+    border: 1px solid rgba(30, 81, 103, 1);
+    opacity: 1;
+    background-color: rgba(245, 252, 255, 1);
+    padding: 8px;
+    font-size: 16px;
+    width: 250px;
+}
