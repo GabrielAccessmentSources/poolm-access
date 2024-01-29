@@ -45,18 +45,19 @@ const App = () => {
             >
                 <Form>
                     <div className="input-row">
-                        <TextInput name="firstName" type="name" />
-
+                        <TextInput name="firstName" type="name"/>
                         <div className='spacer'/>
-                        <TextInput name="lastName" type="surname" />
+                        <TextInput name="lastName" type="surname"/>
                     </div>
 
+                    <div className='vertical-spacer'/>
                     <div className="selector-row">
-                        <Selector name="favoriteMovie" label="Favorite Star Wars Movie" />
+                        <Selector name="favoriteMovie" label="Favorite Star Wars Movie"/>
                     </div>
 
                     <BaseButton
-                        onClick={() => {}}
+                        onClick={() => {
+                        }}
                         label="Confirm"
                         type="primary"
                     />
