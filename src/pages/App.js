@@ -45,8 +45,10 @@ const App = () => {
             >
                 <Form>
                     <div className="input-row">
-                        <TextInput name="firstName" label="First Name" />
-                        <TextInput name="lastName" label="Last Name" />
+                        <TextInput name="firstName" type="name" />
+
+                        <div className='spacer'/>
+                        <TextInput name="lastName" type="surname" />
                     </div>
 
                     <div className="selector-row">
