@@ -37,7 +37,7 @@ const App = () => {
     return (
     <>
         <Card>
-            <h1>hello world</h1>
+            <h1 className="custom-title">My form</h1>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
