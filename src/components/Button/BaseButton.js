@@ -1,6 +1,6 @@
 import React from "react";
 
-export const BaseButton = () => {
+export const BaseButton = ({onPress, label, type}) => {
     return(
         <button>
 
