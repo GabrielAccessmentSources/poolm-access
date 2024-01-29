@@ -22,12 +22,12 @@ label {
 }
 
 .input {
-    flex: 1;
     padding: 8px;
     border: 1px solid rgba(30, 81, 103, 1);
     border-radius: 8px;
     background-color: rgba(245, 252, 255, 1);
     margin-top: 5px;
+    margin-right: 10px;
 }
 
 .error {
@@ -37,7 +37,6 @@ label {
 }
 
 button {
-    padding: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -45,3 +44,14 @@ button {
     cursor: pointer;
     margin-top: 10px;
 }
+
+.custom-label {
+    opacity: 1;
+    color: rgba(30, 81, 103, 1);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
