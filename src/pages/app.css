@@ -16,9 +16,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 39px;
 }
 
 .custom-input {
     border-radius: 8px;
+}
+
+.selector-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 39px;
 }

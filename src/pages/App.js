@@ -27,7 +27,10 @@ const App = () => {
                 <TextInput type="name"/>
                 <TextInput type="surname"/>
             </div>
-            <Selector label={"Favorite star wars movie"} data={films}/>
+            <div className="selector-row">
+                <Selector label={"Favorite star wars movie"} data={films}
+                />
+            </div>
         </Card>
     </>
   );
