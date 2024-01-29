@@ -1,9 +1,9 @@
 import React from "react";
 
-export const BaseButton = ({onPress, label, type}) => {
+export const BaseButton = ({onClick, label, type}) => {
     return(
-        <button>
-
+        <button onClick={onClick} type={type}>
+            {label}
         </button>
     );
 };
