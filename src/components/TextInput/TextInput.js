@@ -1,7 +1,8 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
-import "./textInput.css";
+
 import { LabelHelper } from "../../helpers/LabelHelper";
+import "./textInput.css";
 
 export const TextInput = ({ name, type }) => {
     return (

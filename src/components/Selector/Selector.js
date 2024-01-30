@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./selector.css";
 
 export const Selector = ({ label, data }) => {
