@@ -9,7 +9,7 @@ export const Selector = ({ label, data }) => {
             </label>
             <select id="customSelector" className="selector">
                 {data?.map((movie) => (
-                    <option key={movie.title} value={movie.title}>
+                    <option key={movie.title} value={movie.title} className="selector-option">
                         {movie.title}
                     </option>
                 ))}

@@ -9,6 +9,7 @@ import { Selector } from "../components/Selector/Selector";
 import { BaseButton } from "../components/Button/BaseButton";
 import { validationSchema } from "../helpers/ValidationSchema";
 import "./app.css";
+import "../components/Card/card.css";
 
 const App = () => {
     const dispatch=  useDispatch();
@@ -37,13 +38,15 @@ const App = () => {
     return (
     <>
         <Card>
-            <h1 className="custom-title">My form</h1>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
             >
                 <Form>
+                    <div className="title-row">
+                        <h1 className="custom-title">My form</h1>
+                    </div>
                     <div className="input-row">
                         <TextInput name="firstName" type="name"/>
                         <div className='spacer'/>
@@ -52,15 +55,21 @@ const App = () => {
 
                     <div className='vertical-spacer'/>
                     <div className="selector-row">
-                        <Selector name="favoriteMovie" label="Favorite Star Wars Movie"/>
+                        <Selector
+                            name="favoriteMovie"
+                            label="Favorite Star Wars Movie"
+                            data={films}
+                        />
                     </div>
 
-                    <BaseButton
-                        onClick={() => {
-                        }}
-                        label="Confirm"
-                        type="primary"
-                    />
+                    <div className="button-container">
+                        <BaseButton
+                            onClick={() => {
+                            }}
+                            label="Confirm"
+                            type="primary"
+                        />
+                    </div>
                 </Form>
             </Formik>
         </Card>

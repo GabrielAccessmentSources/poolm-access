@@ -1,0 +1,18 @@
+.primary-button {
+    border-radius: 8px;
+    opacity: 1;
+    background-color: #00B3FF;
+    width: 82px;
+    height: 32px;
+    border-color: #00B3FF;
+}
+
+.label {
+    opacity: 1;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0px;
+    text-align: left;
+}
