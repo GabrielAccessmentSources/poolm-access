@@ -1,5 +1,6 @@
 import React from "react";
-import "./card.css"; // Import the CSS file
+
+import "./card.css";
 
 export const Card = ({ children }) => {
     return (

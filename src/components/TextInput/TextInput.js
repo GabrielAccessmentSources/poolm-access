@@ -1,40 +1,22 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import "./form.css";
+import { Field, ErrorMessage } from "formik";
+
 import { LabelHelper } from "../../helpers/LabelHelper";
+import "./textInput.css";
 
-const initialValues = {
-    firstName: "",
-};
-
-export const TextInput = ({ type }) => {
-    const validationSchema = Yup.object({
-        firstName: Yup.string().required(LabelHelper({ type }).errorLabel),
-    });
-
-    const handleSubmit = (values) => {
-        console.log("Form submitted with values:", values);
-    };
-
+export const TextInput = ({ name, type }) => {
     return (
-        <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-        >
-            <Form className="my-form">
-                <div className="form-group">
-                    <ErrorMessage name="firstName" component="div" className="error"/>
-                    <label htmlFor="firstName" className="custom-label">
-                        {LabelHelper({ type }).label}
-                    </label>
-                    <div className="input-container">
-                        <Field type="text" id="firstName" name="firstName" className="input"/>
-                    </div>
-                </div>
-            </Form>
-        </Formik>
-
+        <div className="input-wrapper">
+            <label htmlFor={name} className="custom-label">
+                {LabelHelper({ type }).label} *
+            </label>
+            <Field
+                type="text"
+                id={name}
+                name={name}
+                className="input"
+            />
+            <ErrorMessage name={name} component="div" />
+        </div>
     );
 };
