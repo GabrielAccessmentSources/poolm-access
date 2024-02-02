@@ -1,10 +1,10 @@
 import React from "react";
-import { Field, ErrorMessage } from "formik";
+import { Field } from "formik";
 
 import { LabelHelper } from "../../helpers/LabelHelper";
 import "./textInput.css";
 
-export const TextInput = ({ name, type }) => {
+export const TextInput = ({ name, type, onChange, value }) => {
     return (
         <div className="input-wrapper">
             <label htmlFor={name} className="custom-label">
@@ -14,9 +14,10 @@ export const TextInput = ({ name, type }) => {
                 type="text"
                 id={name}
                 name={name}
+                value={value}
                 className="input"
+                onChange={onChange}
             />
-            <ErrorMessage name={name} component="div" />
         </div>
     );
 };
