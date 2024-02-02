@@ -2,11 +2,12 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true
     },
     extends: ["eslint:recommended", "plugin:react/recommended"],
     overrides: [
         {
-            files: ["*.js"], // Add the specific file patterns where you want to disable the rule
+            files: ["*.js"],
             rules: {
                 "react/prop-types": "off",
             },
