@@ -35,9 +35,8 @@ const App = () => {
         }));
     };
 
-    const handleSubmit = (values, { setSubmitting }) => {
+    const handleSubmit = (values) => {
         console.log("Form submitted with values:", values);
-        setSubmitting(false);
     };
 
     return (
@@ -47,58 +46,58 @@ const App = () => {
                     initialValues={formValues}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
+                    validateOnChange={true}
                 >
-                    {({ errors }) => (
-                        <Form>
-                            <div className="title-row">
-                                <h1 className="custom-title">My form</h1>
-                            </div>
-
-                            {errors.firstName && (
-                                <div className="input-row">
-                                    <ErrorMessage name="firstName" component="div" />
+                    {({ errors }) => {
+                        return (
+                            <Form>
+                                <div className="title-row">
+                                    <h1 className="custom-title">My form</h1>
                                 </div>
-                            )}
-                            {errors.lastName && (
+
+                                {errors.firstName && (
+                                    <div className="input-row">
+                                        <ErrorMessage name="firstName" component="div" />
+                                    </div>
+                                )}
+                                {errors.lastName && (
+                                    <div className="input-row">
+                                        <ErrorMessage name="lastName" component="div" />
+                                    </div>
+                                )}
+
                                 <div className="input-row">
-                                    <ErrorMessage name="lastName" component="div" />
+                                    <TextInput
+                                        name="firstName"
+                                        type="name"
+                                    />
+                                    <div className='spacer'/>
+                                    <TextInput
+                                        name="lastName"
+                                        type="lastName"
+                                    />
                                 </div>
-                            )}
 
-                            <div className="input-row">
-                                <TextInput
-                                    value={formValues.firstName}
-                                    name="firstName" type="name"
-                                    onChange={handleChange}
-                                />
-                                <div className='spacer'/>
-                                <TextInput
-                                    value={formValues.lastName}
-                                    name="lastName"
-                                    type="surname"
-                                    onChange={handleChange}
-                                />
-                            </div>
+                                <div className='vertical-spacer'/>
+                                <div className="selector-row">
+                                    <Selector
+                                        name="favoriteMovie"
+                                        label="Favorite Star Wars Movie"
+                                        data={films}
+                                        onChange={handleChange}
+                                    />
+                                </div>
 
-                            <div className='vertical-spacer'/>
-                            <div className="selector-row">
-                                <Selector
-                                    name="favoriteMovie"
-                                    label="Favorite Star Wars Movie"
-                                    data={films}
-                                    onChange={handleChange}
-                                />
-                            </div>
-
-                            <div className="button-container">
-                                <BaseButton
-                                    onClick={() => {}}
-                                    label="Confirm"
-                                    type="primary"
-                                />
-                            </div>
-                        </Form>
-                    )}
+                                <div className="button-container">
+                                    <BaseButton
+                                        onClick={handleSubmit}
+                                        label="Confirm"
+                                        type="primary"
+                                    />
+                                </div>
+                            </Form>
+                        );
+                    }}
                 </Formik>
             </Card>
         </>
