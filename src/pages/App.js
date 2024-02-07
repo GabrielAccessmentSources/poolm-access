@@ -35,9 +35,8 @@ const App = () => {
         }));
     };
 
-    const handleSubmit = (values, { setSubmitting }) => {
+    const handleSubmit = (values) => {
         console.log("Form submitted with values:", values);
-        setSubmitting(false);
     };
 
     return (
@@ -50,7 +49,6 @@ const App = () => {
                     validateOnChange={true}
                 >
                     {({ errors }) => {
-                        console.log(errors);
                         return (
                             <Form>
                                 <div className="title-row">
@@ -70,17 +68,13 @@ const App = () => {
 
                                 <div className="input-row">
                                     <TextInput
-                                        value={formValues.firstName}
                                         name="firstName"
                                         type="name"
-                                        onChange={handleChange}
                                     />
                                     <div className='spacer'/>
                                     <TextInput
-                                        value={formValues.lastName}
                                         name="lastName"
-                                        type="surname"
-                                        onChange={handleChange}
+                                        type="lastName"
                                     />
                                 </div>
 
@@ -96,7 +90,7 @@ const App = () => {
 
                                 <div className="button-container">
                                     <BaseButton
-                                        onClick={() => {}}
+                                        onClick={handleSubmit}
                                         label="Confirm"
                                         type="primary"
                                     />
