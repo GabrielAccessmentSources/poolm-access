@@ -2,13 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { fetchFilms } from "../actions/fetchFilms";
 
+type FilmsStateType =  {
+    films: string[];
+    status: "idle" | "loading" | "succeeded" | "failed";
+    error: string | undefined | null;
+}
+
+const initialState: FilmsStateType = {
+    films: [],
+    status: "idle",
+    error: null,
+};
+
 const filmsSlice = createSlice({
     name: "films",
-    initialState: {
-        films: [],
-        status: "idle",
-        error: null,
-    },
+    initialState: initialState,
     reducers: {},
     extraReducers: (builder) => {
         builder

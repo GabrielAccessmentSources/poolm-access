@@ -4,7 +4,13 @@ import { Field } from "formik";
 import { LabelHelper } from "../../helpers/LabelHelper";
 import "./textInput.css";
 
-export const TextInput = ({ name, type, value }) => {
+type TextInputType = {
+    name?: string;
+    type?: string;
+    value?: string;
+}
+
+export const TextInput = ({ name, type, value }: TextInputType) => {
     return (
         <div className="input-wrapper">
             <label htmlFor={name} className="custom-label">
@@ -20,3 +26,4 @@ export const TextInput = ({ name, type, value }) => {
         </div>
     );
 };
+
