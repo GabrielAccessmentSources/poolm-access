@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Formik, ErrorMessage } from "formik";
 
@@ -15,11 +15,12 @@ const App = () => {
     const dispatch=  useDispatch();
     const films = useSelector((state) => state.films.films);
     const status = useSelector((state) => state.films.status);
-    const [formValues, setFormValues] = useState({
+
+    const initialValues = {
         firstName: "",
         lastName: "",
         favouriteMovie: ""
-    });
+    };
 
     useEffect(() => {
         if(status === "idle"){
@@ -27,13 +28,6 @@ const App = () => {
         }
     }, [dispatch, status]);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
 
     const handleSubmit = (values) => {
         console.log("Form submitted with values:", values);
@@ -43,7 +37,7 @@ const App = () => {
         <>
             <Card>
                 <Formik
-                    initialValues={formValues}
+                    initialValues={initialValues}
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
                     validateOnChange={true}
@@ -81,10 +75,9 @@ const App = () => {
                                 <div className='vertical-spacer'/>
                                 <div className="selector-row">
                                     <Selector
-                                        name="favoriteMovie"
+                                        name="selector"
                                         label="Favorite Star Wars Movie"
                                         data={films}
-                                        onChange={handleChange}
                                     />
                                 </div>
 

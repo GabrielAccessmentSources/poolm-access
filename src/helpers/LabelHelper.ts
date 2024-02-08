@@ -1,4 +1,4 @@
-export const LabelHelper = ({ type }) => {
+export const LabelHelper = ({ type }: { type: string }) => {
     switch (type) {
         case "name":
             return {

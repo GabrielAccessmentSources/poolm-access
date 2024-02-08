@@ -1,6 +1,8 @@
 import React from "react";
+import { Field } from "formik";
 
 import "./selector.css";
+
 
 export const Selector = ({ label, data }) => {
     return (
@@ -8,13 +10,14 @@ export const Selector = ({ label, data }) => {
             <label htmlFor="customSelector" className="custom-label">
                 {label}
             </label>
-            <select id="customSelector" className="selector">
+
+            <Field as="select" name="selector" className="selector">
                 {data?.map((movie) => (
                     <option key={movie.title} value={movie.title} className="selector-option">
                         {movie.title}
                     </option>
                 ))}
-            </select>
+            </Field>
         </div>
     );
 };
