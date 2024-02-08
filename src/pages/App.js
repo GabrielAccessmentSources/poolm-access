@@ -13,8 +13,14 @@ import "../components/Card/card.css";
 
 const App = () => {
     const dispatch=  useDispatch();
-    const films = useSelector((state) => state.films.films);
-    const status = useSelector((state) => state.films.status);
+    const films = useSelector(
+        (state) => state.films.films
+    );
+    const status = useSelector(
+        (state) => state.films.status
+    );
+
+    console.log("FILMS", films);
 
     const initialValues = {
         firstName: "",
