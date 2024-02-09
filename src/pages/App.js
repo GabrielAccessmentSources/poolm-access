@@ -55,12 +55,12 @@ const App = () => {
 
                                 {errors.firstName && (
                                     <div className="input-row">
-                                        <ErrorMessage name="firstName" component="div" />
+                                        <ErrorMessage name="firstName" component="div" className="error-message" />
                                     </div>
                                 )}
                                 {errors.lastName && (
                                     <div className="input-row">
-                                        <ErrorMessage name="lastName" component="div" />
+                                        <ErrorMessage name="lastName" component="div" className="error-message" />
                                     </div>
                                 )}
 
