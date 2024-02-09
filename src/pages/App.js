@@ -10,6 +10,7 @@ import { BaseButton } from "../components/Button/BaseButton";
 import { validationSchema } from "../helpers/ValidationSchema";
 import "./app.css";
 import "../components/Card/card.css";
+import { submitForm } from "../ducks/reducers/formSlice";
 
 const App = () => {
     const dispatch=  useDispatch();
@@ -19,8 +20,6 @@ const App = () => {
     const status = useSelector(
         (state) => state.films.status
     );
-
-    console.log("FILMS", films);
 
     const initialValues = {
         firstName: "",
@@ -34,9 +33,8 @@ const App = () => {
         }
     }, [dispatch, status]);
 
-
     const handleSubmit = (values) => {
-        console.log("Form submitted with values:", values);
+        dispatch(submitForm(values));
     };
 
     return (
